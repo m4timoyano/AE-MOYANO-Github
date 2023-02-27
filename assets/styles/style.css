@@ -1,5 +1,28 @@
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
+.card-img-top {
+    object-fit:cover;
+    min-height: 13rem;
+    max-height: 13rem;
+}
+
+.card-footer{
+    background: none;
+}
+
+/** Footer **/
+.rounded-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/**tarjetas grandes**/
+
+.rounded-start {
+    width: 100%;
+}
+
