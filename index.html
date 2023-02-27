@@ -12,8 +12,9 @@
 </head>
 <body>
     <header class="sticky-top bg-light">
+        <!-- Navbar Principal -->
         <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
+            <div class="container-fluid p-1">
                 <a class="navbar-brand mx-4" href="#"><img src="./assets/img/Logo-Amazing-Events.png" alt="logo amazing events" width="150rem"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -39,51 +40,38 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <main>
-        <div id="carouselExample" class="carousel slide">
+        <!-- Carousel -->
+        <div id="carouselExampleFade" class="carousel slide" style="height: 12vh; background: rgb(207, 22, 96); font-size: 2rem;" data-bs-interval="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="#"><img src="assets/img/Costume_Party.jpg" class="d-block w-100" style="height: 50vh;" alt="Home"></a>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Home</h1>
-                    </div>
+                    <a class="d-block w-100 text-center text-light p-3 text-decoration-none" href="#">Home</a>
                 </div>
                 <div class="carousel-item">
-                    <a href="pages/upcoming.html"><img src="assets/img/Marathon.jpg" class="d-block w-100" style="height: 50vh;" alt="Upcoming Events"></a>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Upcoming Events</h1>
-                    </div>
+                    <a class="d-block w-100 text-center text-light p-3 text-decoration-none" href="./pages/upcoming.html">Upcoming Events</a>
                 </div>
                 <div class="carousel-item">
-                    <a href="pages/past.html"><img src="assets/img/Cinema.jpg" class="d-block w-100" style="height: 50vh;" alt="Past Events"></a>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Past Events</h1>
-                    </div>
+                    <a class="d-block w-100 text-center text-light p-3 text-decoration-none" href="./pages/past.html">Past Events</a>
                 </div>
                 <div class="carousel-item">
-                    <a href="pages/contact.html"><img src="assets/img/Museum_Tour.jpg" class="d-block w-100" style="height: 50vh;" alt="Contact"></a>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Contact Us</h1>
-                    </div>
+                    <a class="d-block w-100 text-center text-light p-3 text-decoration-none" href="./pages/contact.html">Contact Us</a>
                 </div>
                 <div class="carousel-item">
-                    <a href="pages/stats.html"><img src="assets/img/Music_Concert.jpg" class="d-block w-100" style="height: 50vh;" alt="Stats"></a>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Stats</h1>
-                    </div>
+                    <a class="d-block w-100 text-center text-light p-3 text-decoration-none" href="./pages/stats.html">Stats</a>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary m-5">
+    </header>
+    <main>
+        <!-- Categorías y search -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary m-4">
             <div class="container-fluid">
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                     <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
@@ -108,49 +96,58 @@
                 </form>
             </div>
         </nav>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="card m-5" style="width: 18rem;">
-                <img src="assets/img/favicon-amazing.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">Texto descriptivo.</p>
-                </div>
-                <div class="card-body">
-                    <p class="card-text d-inline-block">Price $00000</p>
-                    <a href="pages/details.html" class="btn btn-primary m-2">Button</a>
-                </div>
-            </div>
-            <div class="card m-5" style="width: 18rem;">
-                <img src="assets/img/favicon-amazing.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">Texto descriptivo.</p>
-                </div>
-                <div class="card-body">
-                    <p class="card-text d-inline-block">Price $00000</p>
-                    <a href="pages/details.html" class="btn btn-primary m-2">Button</a>
+        <!-- Cards -->
+        <div class="row row-cols-1 row-cols-md-4 g-4 m-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./assets/img/Museum_Tour.jpg" class="card-img-top h-50" alt="Museum_Tour">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <span class="card-footer d-flex justify-content-between ps-4 pe-4">
+                    <p style="display: inline;">$00000</p>
+                    <a href="./pages/details.html" class="btn btn-outline-danger">Details</a>
+                    </span>
                 </div>
             </div>
-            <div class="card m-5" style="width: 18rem;">
-                <img src="assets/img/favicon-amazing.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">Texto descriptivo.</p>
-                </div>
-                <div class="card-body">
-                    <p class="card-text d-inline-block">Price $00000</p>
-                    <a href="pages/details.html" class="btn btn-primary m-2">Button</a>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./assets/img/Cinema.jpg" class="card-img-top h-50" alt="Cinema">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <span class="card-footer d-flex justify-content-between ps-4 pe-4">
+                        <p style="display: inline;">$00000</p>
+                        <a href="./pages/details.html" class="btn btn-outline-danger">Details</a>
+                    </span>
                 </div>
             </div>
-            <div class="card m-5" style="width: 18rem;">
-                <img src="assets/img/favicon-amazing.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">Texto descriptivo.</p>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./assets/img/Food_Fair.jpg" class="card-img-top h-50" alt="Food_Fair">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <span class="card-footer d-flex justify-content-between ps-4 pe-4">
+                        <p style="display: inline;">$00000</p>
+                        <a href="./pages/details.html" class="btn btn-outline-danger">Details</a>
+                    </span>
                 </div>
-                <div class="card-body">
-                    <p class="card-text d-inline-block">Price $00000</p>
-                    <a href="pages/details.html" class="btn btn-primary m-2">Button</a>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./assets/img/Marathon.jpg" class="card-img-top h-50" alt="Marathon">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <span class="card-footer d-flex justify-content-between ps-4 pe-4">
+                        <p style="display: inline;">$00000</p>
+                        <a href="./pages/details.html" class="btn btn-outline-danger">Details</a>
+                    </span>
                 </div>
             </div>
         </div>
