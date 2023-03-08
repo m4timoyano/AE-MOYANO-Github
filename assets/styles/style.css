@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+/* Checkbox */
+
+
+
+
+/* Cards */
+
 .card-img-top {
     object-fit:cover;
     min-height: 13rem;
@@ -25,4 +32,3 @@
 .rounded-start {
     width: 100%;
 }
-
