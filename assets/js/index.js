@@ -1,4 +1,4 @@
-import $data from './data.js'
+import data from './data.js'
 
 const $eventcard = document.getElementById('cardcontainer');
 const $check = document.getElementById('check-container');
@@ -29,7 +29,7 @@ const armarCard = (eventsarray, container) => {
     container.appendChild(fragment);
 }
 
-armarCard($data.events, $eventcard)
+armarCard(data.events, $eventcard)
 
 
 /* Checkboxs */
@@ -45,7 +45,7 @@ const crearCategorias = (array) => {
     }, [])
     return categorias
 }
-let checkCategorias = crearCategorias($data.events)
+let checkCategorias = crearCategorias(data.events)
 
 const crearCheckbox = (array, container) => {
     array.forEach( categoria => {
@@ -66,7 +66,7 @@ const searchFiltro = (array, value) => {
 }
 
 const checkFiltro = (array) => {
-    let checked = document.querySelector('div.input[type="checkbox"]:checked');
+    let checked = document.querySelector('input[type="checkbox"]:checked');
     let filteredArray = array.filter(element => element.category.toLowerCase().includes(checked.id.toLowerCase()))
     return filteredArray
 }
@@ -79,12 +79,12 @@ const filterAndPinter = (array) => {
 
 const allEvents = () => {
     $search.addEventListener('keyup', (e) => {
-        let dataFilter = filterAndPinter($data.events)
+        let dataFilter = filterAndPinter(data.events)
         armarCard(dataFilter, $eventcard)
     })
 
     $check.addEventListener('change', ()=>{
-        let dataFilter = filterAndPinter($data.events)
+        let dataFilter = filterAndPinter(data.events)
         armarCard(dataFilter, $eventcard)
     })
 }
