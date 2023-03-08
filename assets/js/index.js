@@ -20,7 +20,7 @@ const armarCard = (eventsarray, container) => {
                 <p class="card-text">${card.category}</p>
                 <span class="card-footer d-flex justify-content-between ps-4 pe-4">
                     <p style="display: inline;">$ ${card.price}</p>
-                    <a href="./pages/details.html" class="btn btn-outline-danger">Details</a>
+                    <a href="./pages/details.html?id=${card._id}" class="btn btn-outline-danger">Details</a>
                 </span>
             </div>
         </div>`
@@ -66,25 +66,26 @@ const searchFiltro = (array, value) => {
 }
 
 const checkFiltro = (array) => {
-    let checked = document.querySelector('input[type="checkbox"]:checked');
-    let filteredArray = array.filter(element => element.category.toLowerCase().includes(checked.id.toLowerCase()))
+    let checked = document.querySelectorAll('input[type="checkbox"]:checked');
+    let categories = Array.from(checked).map(el => el.id.toLowerCase());
+    let filteredArray = array.filter(element => categories.some(category => element.category.toLowerCase().includes(category)));
     return filteredArray
 }
 
-const filterAndPinter = (array) => {
+const filtroUnificado = (array) => {
     let filteredArray = searchFiltro(array, $search.value)
     filteredArray = checkFiltro(filteredArray)
     return filteredArray
 }
 
 const allEvents = () => {
-    $search.addEventListener('keyup', (e) => {
-        let dataFilter = filterAndPinter(data.events)
+    $search.addEventListener('input', (e) => {
+        let dataFilter = filtroUnificado(data.events)
         armarCard(dataFilter, $eventcard)
     })
 
     $check.addEventListener('change', ()=>{
-        let dataFilter = filterAndPinter(data.events)
+        let dataFilter = filtroUnificado(data.events)
         armarCard(dataFilter, $eventcard)
     })
 }

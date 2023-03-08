@@ -4,9 +4,9 @@ const queryString = location.search
 
 const params = new URLSearchParams(queryString)
 
-const id = params.get("id")
+const id = params.get("_id")
 
-const cardGrande = data.find(jugador => jugador.id == id)
+const cardGrande = data.find(card => card._id == id)
 
 const div = document.querySelector("#contenedor")
 div.innerHTML = `<div class="col-md-5">
