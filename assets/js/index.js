@@ -2,7 +2,7 @@ import data from './data.js'
 
 const $eventcard = document.getElementById('cardcontainer');
 const $check = document.getElementById('check-container');
-const $search = document.querySelector('input[placeholder="search"]');
+const $search = document.querySelector('input[placeholder="Search"]');
 const fragment = document.createDocumentFragment();
 
 /* Cards */
@@ -61,7 +61,7 @@ const crearCheckbox = (array, container) => {
 crearCheckbox(checkCategorias, $check)
 
 const searchFiltro = (array, value) => {
-    let filteredArray = array.filter(element => element.name.toLowerCase().includes(value.toLowerCase()))
+    let filteredArray = array.filter(element => element.name.toLowerCase().includes(value.toLowerCase().trim()))
     return filteredArray
 }
 
@@ -74,19 +74,21 @@ const checkFiltro = (array) => {
 
 const filtroUnificado = (array) => {
     let filteredArray = searchFiltro(array, $search.value)
-    filteredArray = checkFiltro(filteredArray)
+    let checkedCategories = document.querySelectorAll('input[type="checkbox"]:checked');
+    if (checkedCategories.length > 0) {
+        filteredArray = checkFiltro(filteredArray)
+    }
     return filteredArray
 }
 
-const allEvents = () => {
-    $search.addEventListener('input', (e) => {
-        let dataFilter = filtroUnificado(data.events)
-        armarCard(dataFilter, $eventcard)
-    })
+$search.addEventListener('input', (e) => {
+    let dataFilter = filtroUnificado(data.events)
+    armarCard(dataFilter, $eventcard)
+})
 
-    $check.addEventListener('change', ()=>{
-        let dataFilter = filtroUnificado(data.events)
-        armarCard(dataFilter, $eventcard)
-    })
-}
-allEvents()
+$check.addEventListener('change', ()=>{
+    let dataFilter = filtroUnificado(data.events)
+    armarCard(dataFilter, $eventcard)
+})
+
+filtroUnificado()
