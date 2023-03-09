@@ -1,5 +1,5 @@
 import data from './data.js'
-// import {crearCategorias, checkCategorias, crearCheckbox, searchFiltro, checkFiltro, filtroUnificado} from './index.js';
+/*import {crearCategorias, checkCategorias, crearCheckbox, searchFiltro, checkFiltro, filtroUnificado} from './index.js';*/
 
 const $eventcard = document.getElementById('cardcontainer');
 const $check = document.getElementById('check-container');
@@ -15,7 +15,7 @@ const upcomingCards = (eventsarray, container) => {
         let div = document.createElement('div')
         div.className = 'col'
         div.innerHTML = `<div class="card h-100">
-            <img src="./assets/img/notfound.jpg" class="card-img-top h-50"
+            <img src="../assets/img/notfound.jpg" class="card-img-top h-50"
             alt="...">
             <div class="card-body">
                 <h5 class="card-title">Not Found</h5>
@@ -35,7 +35,7 @@ const upcomingCards = (eventsarray, container) => {
                     <p class="card-text">${card.category}</p>
                     <span class="card-footer d-flex justify-content-between ps-4 pe-4">
                     <p style="display: inline;">$ ${card.price}</p>
-                    <a href="./details.html?id=${card._id}" class="btn btn-outline-danger">Details</a>
+                    <a href="../../pages/details.html?id=${card._id}" class="btn btn-outline-danger">Details</a>
                     </span>
                 </div>
             </div>`
@@ -45,7 +45,7 @@ const upcomingCards = (eventsarray, container) => {
     container.appendChild(fragment);
 }
 
-upcomingCards(data.events, $eventcard);
+upcomingCards(data.events, $eventcard)
 
 /* Checkboxs */
 

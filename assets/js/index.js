@@ -17,7 +17,6 @@ const armarCard = (eventsarray, container) => {
             alt="...">
             <div class="card-body">
                 <h5 class="card-title">Not Found</h5>
-                <p class="card-text">There is no event with that name!</p>
             </div>
         </div>`
         fragment.appendChild(div);
@@ -106,3 +105,5 @@ $check.addEventListener('change', ()=>{
 })
 
 filtroUnificado()
+
+export {crearCategorias, checkCategorias, crearCheckbox, searchFiltro, checkFiltro, filtroUnificado}
