@@ -4,11 +4,21 @@
     box-sizing: border-box;
 }
 
-/* Checkbox */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
 
+#content-wrap {
+    padding-bottom: 2.5rem;    
+}
 
-
-
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            
+}
 /* Cards */
 
 .card-img-top {
@@ -29,6 +39,40 @@
 
 /**tarjetas grandes**/
 
-.rounded-start {
-    width: 100%;
+#maindetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contenedor > img.card-img-top {
+    object-fit:cover;
+    min-height: 20rem;
+    max-height: 20rem;
+}
+.card{
+    box-shadow: 2px 2px 6px rgba(77, 12, 26, 0.701);
+}
+#cardcontainer .card:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+#cardcontainer > .card:not(hover){
+    transition: 0.5s;
+}
+#search{
+    box-shadow: 1px 1px 5px rgba(47, 45, 46, 0.701);
+}
+
+@media only screen and (max-width: 375px){
+    #cardtextinline{
+        display: block !important;
+        padding-left: 0 !important;
+        padding-top: 1rem;
+    }
+    #contenedor > img.card-img-top {
+        object-fit:cover;
+        min-height: 15rem;
+        max-height: 15rem;
+    }
 }

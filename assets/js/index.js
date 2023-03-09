@@ -9,23 +9,37 @@ const fragment = document.createDocumentFragment();
 
 const armarCard = (eventsarray, container) => {
     container.innerHTML = ""
-    eventsarray.forEach(card => {
+    if(eventsarray.length < 1) {
         let div = document.createElement('div')
         div.className = 'col'
         div.innerHTML = `<div class="card h-100">
-            <img src="${card.image}" class="card-img-top h-50"
+            <img src="./assets/img/notfound.jpg" class="card-img-top h-50"
             alt="...">
             <div class="card-body">
-                <h5 class="card-title">${card.name}</h5>
-                <p class="card-text">${card.category}</p>
-                <span class="card-footer d-flex justify-content-between ps-4 pe-4">
-                    <p style="display: inline;">$ ${card.price}</p>
-                    <a href="./pages/details.html?id=${card._id}" class="btn btn-outline-danger">Details</a>
-                </span>
+                <h5 class="card-title">Not Found</h5>
+                <p class="card-text">There is no event with that name!</p>
             </div>
         </div>`
         fragment.appendChild(div);
-    })
+    } else {
+        eventsarray.forEach(card => {
+            let div = document.createElement('div')
+            div.className = 'col'
+            div.innerHTML = `<div class="card h-100">
+                <img src="${card.image}" class="card-img-top h-50"
+                alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${card.name}</h5>
+                    <p class="card-text">${card.category}</p>
+                    <span class="card-footer d-flex justify-content-between ps-4 pe-4">
+                        <p style="display: inline;">$ ${card.price}</p>
+                        <a href="./pages/details.html?id=${card._id}" class="btn btn-outline-danger">Details</a>
+                    </span>
+                </div>
+            </div>`
+            fragment.appendChild(div);
+        })
+    }
     container.appendChild(fragment);
 }
 
