@@ -65,7 +65,7 @@ const crearCheckbox = (array, container) => {
         div.className = `${categoria.toLowerCase()}`
         div.innerHTML = `
         <input type="checkbox" class="btn-check" id="${categoria.toLowerCase()}" autocomplete="off">
-        <label class="btn btn-outline-primary text-center" style="height: 50px; width: 75px; font-size: 0.8rem;" for="${categoria.toLowerCase()}">${categoria}</label>
+        <label class="btn btn-outline-primary text-center" style="height: 50px; width: 75px; font-size: 0.8rem; box-shadow: 1px 1px 5px rgba(47, 45, 46, 0.701);" for="${categoria.toLowerCase()}">${categoria}</label>
         `
         container.appendChild(div)
     })
