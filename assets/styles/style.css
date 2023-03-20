@@ -76,3 +76,7 @@
         max-height: 15rem;
     }
 }
+
+.table{
+    box-shadow: 1px 1px 5px rgba(47, 45, 46, 0.701);
+}
