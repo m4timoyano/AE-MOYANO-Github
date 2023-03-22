@@ -21,9 +21,15 @@ async function fetchAPI() {
         upcomingEvents = data.events.filter(e => e.date >= data.currentDate)
         pastEvents = data.events.filter(e => e.date <= data.currentDate)
 
-        let attendancePercentage = pastEvents.map(e => {
-            return Number(e.assistance / e.capacity)
+        let attendancePercentage = allEvents.map(e => {
+            if (e.estimate) {
+                return Number(e.estimate / e.capacity)
+            }
+            else {
+                return Number(e.assistance / e.capacity)
+            }
         })
+
 
         let maxAttendancePercentage = Math.max(...attendancePercentage)
         let minAttendancePercentage = Math.min(...attendancePercentage)
